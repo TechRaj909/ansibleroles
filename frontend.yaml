@@ -1,4 +1,5 @@
 - name: frontend service
   hosts: frontend
   become: yes
-  roles: frontend
+  roles:  
+  - frontend
