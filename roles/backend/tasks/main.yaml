@@ -54,8 +54,8 @@
   community.mysql.mysql_db:
     state: import
     name: all
-    login_user: root
-    login_password: ExpenseApp@1
+    login_user: "{{ mysql_root_username }}"
+    login_password: "{{ mysql_root_password }}"
     login_host: mysql.daws82s.fun
     target: /app/schema/backend.sql
 
