@@ -28,14 +28,14 @@
 #     src: /tmp/frontend.zip
 #     dest: /usr/share/nginx/html
 #     remote_src: yes
-
+- name: do frontend from common
+  include_role:
+    name: common
+    tasks_from: main
+    
 - name: Copy file with owner and permissions
   ansible.builtin.template:
     src: expance.conf.j2
     dest: /etc/nginx/default.d/expanse.conf
   notify: Ngnix Restart
 
-- name: do frontend from common
-  include_role:
-    name: common
-    tasks_from: common
